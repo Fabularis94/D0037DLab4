@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Lab4.cpp" />
+    <ClCompile Include="Owner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Body.h" />
