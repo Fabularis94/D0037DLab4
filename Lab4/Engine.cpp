@@ -2,9 +2,13 @@
 #include <iostream>
 
 
-Engine::Engine(float litres, int cylinders) {
-	sizeInLitres = litres;
-	numberOfCylinders = cylinders;
+Engine::Engine(float sizeInLitres, int numberOfCylinders) {
+	/*sizeInLitres = litres;
+	numberOfCylinders = cylinders;*/
+	//learnt how to use this
+	this->sizeInLitres = sizeInLitres;
+	this->numberOfCylinders = numberOfCylinders ;
+
 }
 
 void Engine::print() {
