@@ -11,23 +11,18 @@ int main()
 	int litres{};
 	int cylinders{};
 
+	float width{};
+	float height{};
+
 	std::string name{};
 	std::string address{};
+	std::string colour{};
 	
 	char driverAnswer{};
 
 	bool allowedToDrive{};
 
 	std::cout << "Welcome to build your vehicle! \n";
-
-	/*std::cout << "To start off, choose the engine size in litres: ";
-	std::cin >> litres;
-
-	std::cout << "Now choose the amount of cylinders: ";
-	std::cin >> cylinders;
-
-	Engine engine(litres, cylinders);
-	engine.print();*/
 
 	std::cout << "Input your name: ";
 	std::cin >> name;
@@ -58,8 +53,31 @@ int main()
 
 	Owner owner(name, address, allowedToDrive);
 
-	owner.print();
+	std::cout << "Choose the colour of the vehicle: ";
+	std::cin >> colour;
+
+	std::cout << "Choose the width of the vehicle: ";
+	std::cin >> width;
+
+	std::cout << "Choose the height of the vehicle: ";
+	std::cin >> height;
+
+	Body body(colour, width, height);
+
+	std::cout << "Choose the engine size in litres: ";
+	std::cin >> litres;
+
+	std::cout << "Now choose the amount of cylinders: ";
+	std::cin >> cylinders;
+
+	Engine engine(litres, cylinders);
 	
+
+	owner.print();
+
+	body.print();
+
+	engine.print();
 
 }
 

@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Body.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Lab4.cpp" />
     <ClCompile Include="Owner.cpp" />
