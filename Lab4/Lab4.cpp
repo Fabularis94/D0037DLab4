@@ -3,6 +3,7 @@
 #include "Engine.h"
 #include "Owner.h"
 #include "Body.h"
+#include "MotorVehicle.h"
 
 #pragma once
    
@@ -10,21 +11,25 @@ int main()
 {
 	int litres{};
 	int cylinders{};
+	int numberOfTires{};
 
 	float width{};
 	float height{};
+	//int tireDiameter{};
 
 	std::string name{};
 	std::string address{};
 	std::string colour{};
+	std::string model{};
 	
 	char driverAnswer{};
 
 	bool allowedToDrive{};
 
+
 	std::cout << "Welcome to build your vehicle! \n";
 
-	std::cout << "Input your name: ";
+	/*std::cout << "Input your name: ";
 	std::cin >> name;
 
 	std::cout << "Input your address: ";
@@ -77,7 +82,26 @@ int main()
 
 	body.print();
 
-	engine.print();
+	engine.print();*/
+	
+	std::cout << "Choose the model of the vehicle: ";
+	std::cin >> model;
+	
+	do {
+		std::cout << "Choose the amount of tires (2/4): ";
+		std::cin >> numberOfTires;
+		
+	} while (numberOfTires != 2 && numberOfTires != 4);
+
+	float* tempArray = new float[numberOfTires];
+	
+
+	for (int i = 0; i < numberOfTires; i++) {
+		std::cout << "Choose the tire diameter for wheel " << i + 1 << ": ";
+		std::cin >> tempArray[i];
+	}
+
+	MotorVehicle motorvehicle(tempArray, numberOfTires, model);
 
 }
 

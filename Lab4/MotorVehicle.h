@@ -5,16 +5,19 @@
 #pragma once
 
 
-class Motorvehicle {
+class MotorVehicle {
 private:
 
-    Engine engine{};
-    Body body{};
-    Owner owner{};
-
-    float* tireDiameters{};
+    float tireDiameter{};
 
     int numberOfTires{};
 
     std::string model{};
+
+public:
+
+    MotorVehicle(float* tireDiameter, int numberOfTires, std::string model);
+
+    void print();
+
 };
