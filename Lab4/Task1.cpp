@@ -6,7 +6,7 @@
 #include "MotorVehicle.h"
 
 #pragma once
-   
+
 int main()
 {
 	int litres{};
@@ -21,7 +21,7 @@ int main()
 	std::string address{};
 	std::string colour{};
 	std::string model{};
-	
+
 	char driverAnswer{};
 
 	bool allowedToDrive{};
@@ -76,18 +76,18 @@ int main()
 	std::cin >> cylinders;
 
 	Engine engine(litres, cylinders);
-	
+
 	std::cout << "Choose the model of the vehicle: ";
 	std::cin >> model;
-	
+
 	do {
 		std::cout << "Choose the amount of tires (2/4): ";
 		std::cin >> numberOfTires;
-		
+
 	} while (numberOfTires != 2 && numberOfTires != 4);
 
 	float* tempArray = new float[numberOfTires];
-	
+
 
 	for (int i = 0; i < numberOfTires; i++) {
 		std::cout << "Choose the tire diameter for wheel " << i + 1 << ": ";
