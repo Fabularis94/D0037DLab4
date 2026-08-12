@@ -33,4 +33,10 @@ void MotorVehicle::print() {
 	for (int i = 0; i < numberOfTires; i++) {
 		std::cout << "Tire diamterer for wheel " << i + 1 << " is: " << tireDiameter[i] << '\n';
 	}
+
+}
+
+MotorVehicle::~MotorVehicle(){
+	
+	delete[] tireDiameter;
 }
