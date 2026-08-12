@@ -15,7 +15,6 @@ int main()
 
 	float width{};
 	float height{};
-	//int tireDiameter{};
 
 	std::string name{};
 	std::string address{};
@@ -86,17 +85,10 @@ int main()
 
 	} while (numberOfTires != 2 && numberOfTires != 4);
 
-	float* tempArray = new float[numberOfTires];
 
 
-	for (int i = 0; i < numberOfTires; i++) {
-		std::cout << "Choose the tire diameter for wheel " << i + 1 << ": ";
-		std::cin >> tempArray[i];
-	}
+	MotorVehicle motorvehicle(numberOfTires, model, engine, body, owner);
 
-	MotorVehicle motorvehicle(tempArray, numberOfTires, model, engine, body, owner);
-
-	delete[] tempArray;
 
 	motorvehicle.print();
 

@@ -4,9 +4,10 @@
 #include "Engine.h"
 #include "Body.h"
 #include "Owner.h"
+#include <random>
 
 
-MotorVehicle::MotorVehicle(float* tempArray, int numberOfTires, std::string model, Engine engine, 
+MotorVehicle::MotorVehicle(int numberOfTires, std::string model, Engine engine, 
 	Body body, Owner owner)
 	: engine(engine), body(body), owner(owner) {
 
@@ -14,8 +15,16 @@ MotorVehicle::MotorVehicle(float* tempArray, int numberOfTires, std::string mode
 	this->model = model;
 	tireDiameter = new float[numberOfTires];
 
+	float min = 15.0;
+	float max = 20.0;
+
+	// Initialize a random number generator
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> distrib(min, max);
+
 	for (int i = 0; i < numberOfTires; i++) {
-		tireDiameter[i] = tempArray[i];
+		tireDiameter[i] = distrib(gen);
 	}
 
 }

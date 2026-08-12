@@ -20,7 +20,7 @@ private:
 
 public:
 
-    MotorVehicle(float* tempArray, int numberOfTires, std::string model, Engine engine, Body body, Owner owner);
+    MotorVehicle(int numberOfTires, std::string model, Engine engine, Body body, Owner owner);
     
     ~MotorVehicle();
 
