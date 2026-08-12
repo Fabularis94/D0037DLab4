@@ -29,7 +29,7 @@ int main()
 
 	std::cout << "Welcome to build your vehicle! \n";
 
-	/*std::cout << "Input your name: ";
+	std::cout << "Input your name: ";
 	std::cin >> name;
 
 	std::cout << "Input your address: ";
@@ -44,11 +44,11 @@ int main()
 		driverAnswer = std::tolower(driverAnswer);
 
 		if (driverAnswer == 'y') {
-			allowedToDrive;
+			allowedToDrive = true;
 			break;
 		}
 		else if (driverAnswer == 'n') {
-			!allowedToDrive;
+			allowedToDrive = false;
 			break;
 		}
 		else {
@@ -77,13 +77,6 @@ int main()
 
 	Engine engine(litres, cylinders);
 	
-
-	owner.print();
-
-	body.print();
-
-	engine.print();*/
-	
 	std::cout << "Choose the model of the vehicle: ";
 	std::cin >> model;
 	
@@ -101,7 +94,10 @@ int main()
 		std::cin >> tempArray[i];
 	}
 
-	MotorVehicle motorvehicle(tempArray, numberOfTires, model);
+	MotorVehicle motorvehicle(tempArray, numberOfTires, model, engine, body, owner);
 
+	delete[] tempArray;
+
+	motorvehicle.print();
 }
 
