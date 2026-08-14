@@ -15,13 +15,13 @@ MotorVehicle::MotorVehicle(int numberOfTires, std::string model, Engine engine,
 	this->model = model;
 	tireDiameter = new float[numberOfTires];
 
-	float min = 15.0;
-	float max = 20.0;
+	float min = 15.0f;
+	float max = 20.0f;
 
 	// Initialize a random number generator
 	std::random_device rd;
 	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> distrib(min, max);
+	std::uniform_real_distribution<float> distrib(min, max);
 
 	for (int i = 0; i < numberOfTires; i++) {
 		tireDiameter[i] = distrib(gen);
