@@ -6,16 +6,19 @@
 #include "Owner.h"
 
 
-MotorVehicle::MotorVehicle(float* tempArray, int numberOfTires, std::string model, Engine engine, 
+MotorVehicle::MotorVehicle(int numberOfTires, std::string model, Engine engine, 
 	Body body, Owner owner)
 	: engine(engine), body(body), owner(owner) {
 
 	this->numberOfTires = numberOfTires;
 	this->model = model;
-	tireDiameter = new float[numberOfTires];
+
+
+	std::vector<float> tireDiameter(numberOfTires);
 
 	for (int i = 0; i < numberOfTires; i++) {
-		tireDiameter[i] = tempArray[i];
+		std::cout << "Choose diameter for tire " << i + 1 << " : ";
+		std::cin >> tireDiameter[i];
 	}
 
 }
@@ -34,9 +37,4 @@ void MotorVehicle::print() {
 		std::cout << "Tire diamterer for wheel " << i + 1 << " is: " << tireDiameter[i] << '\n';
 	}
 
-}
-
-MotorVehicle::~MotorVehicle(){
-	
-	delete[] tireDiameter;
 }

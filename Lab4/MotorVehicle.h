@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "Body.h"
 #include "Owner.h"
+#include <vector>
 
 #pragma once
 
@@ -8,9 +9,10 @@
 class MotorVehicle {
 private:
 
-    float* tireDiameter{};
 
     int numberOfTires{};
+
+    std::vector<float> tireDiameter;
 
     std::string model{};
 
@@ -20,10 +22,8 @@ private:
 
 public:
 
-    MotorVehicle(float* tempArray, int numberOfTires, std::string model, Engine engine, Body body, Owner owner);
+    MotorVehicle(int numberOfTires, std::string model, Engine engine, Body body, Owner owner);
     
-    ~MotorVehicle();
-
 
     void print();
 
