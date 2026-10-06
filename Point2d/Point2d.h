@@ -51,7 +51,7 @@ public:
 		x = other.x;
 		y = other.y;
 
-		return x, y;
+		return *this;
 	}
 
 

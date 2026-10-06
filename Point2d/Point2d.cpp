@@ -1,7 +1,11 @@
-#include "Point2D.h"
+#include "Point2d.h"
 
 
-Point2D::Point2D(float x, float y) {
+Point2d::Point2d(float x, float y) {
+	float p1
+}
+
+Point2d::Point2d() {
 
 }
 
